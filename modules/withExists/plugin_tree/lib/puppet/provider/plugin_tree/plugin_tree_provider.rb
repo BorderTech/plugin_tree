@@ -190,6 +190,7 @@ def create
     if not File.file?("#{resource[:dest_path]}/last_req.txt") && File.file?("#{resource[:dest_path]}/last_run.txt")
 	    #if has to retun 'false' to go directly to 'def create'
       puts File.file?("#{resource[:dest_path]}/last_req.txt") && File.file?("#{resource[:dest_path]}/last_run.txt")
+      File.file?("#{resource[:dest_path]}/last_req.txt") && File.file?("#{resource[:dest_path]}/last_run.txt")
     else
       @requested = resource[:plugin]
       @hash_from_last_run =  Hash[*File.read("#{resource[:dest_path]}/last_run.txt").split(/[: \n]+/) ]
