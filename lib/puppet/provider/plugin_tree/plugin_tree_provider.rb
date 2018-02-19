@@ -9,11 +9,15 @@
 #sudo /opt/puppetlabs/puppet/bin/gem
 
 require 'net/http'
+require_relative 'plugin_tree_version.rb'
 #gem list; /opt/puppetlabs/puppet/bin/gem install rubyzip
 
-$LOAD_PATH.unshift '/etc/puppetlabs/code/environments/production/modules/plugin_tree/files'
+$LOAD_PATH.unshift '/home/ze78rm/modules/plugin_tree/files'
 #$LOAD_PATH.unshift '/tmp/files'
 require 'zip'
+
+
+
 
 Puppet::Type.type(:plugin_tree).provide(:plugin_tree_provider) do
 
@@ -79,7 +83,9 @@ Puppet::Type.type(:plugin_tree).provide(:plugin_tree_provider) do
        depName = values[0]
        depVersion = values[1]
 
-       if Gem::Version.new(resource[:plugin][depName]) > Gem::Version.new(depVersion)
+	h = Hat.new 
+	h.write "what the ??"
+       if PluginTreeVersion.new(resource[:plugin][depName]) > PluginTreeVersion.new(depVersion)
          puts "Upgradgin from #{depVersion} to #{resource[:plugin][depName]}"
          depVersion = resource[:plugin][depName]
        end
@@ -87,9 +93,9 @@ Puppet::Type.type(:plugin_tree).provide(:plugin_tree_provider) do
        currentVersion = @hashOfFinalDependences[depName]
        
        puts "IN FINAL #{currentVersion}"
-       puts  Gem::Version.new(currentVersion) < Gem::Version.new(depVersion)
+       puts  PluginTreeVersion.new(currentVersion) < PluginTreeVersion.new(depVersion)
        
-       if ((not @processedAlready.include?(child) and currentVersion == nil) or Gem::Version.new(currentVersion) < Gem::Version.new(depVersion) )
+       if ((not @processedAlready.include?(child) and currentVersion == nil) or PluginTreeVersion.new(currentVersion) < PluginTreeVersion.new(depVersion) )
          
          puts "step 2 #{child}"
          #values = child.split(":")
@@ -107,7 +113,7 @@ Puppet::Type.type(:plugin_tree).provide(:plugin_tree_provider) do
            
           #get latest version
           
-          if Gem::Version.new(currentVersion) < Gem::Version.new(depVersion)
+          if PluginTreeVersion.new(currentVersion) < PluginTreeVersion.new(depVersion)
             puts "updating version of #{depName} from #{currentVersion} to #{depVersion}"
             
             @hashOfFinalDependences[depName] = depVersion
