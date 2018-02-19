@@ -83,8 +83,6 @@ Puppet::Type.type(:plugin_tree).provide(:plugin_tree_provider) do
        depName = values[0]
        depVersion = values[1]
 
-	h = Hat.new 
-	h.write "what the ??"
        if PluginTreeVersion.new(resource[:plugin][depName]) > PluginTreeVersion.new(depVersion)
          puts "Upgradgin from #{depVersion} to #{resource[:plugin][depName]}"
          depVersion = resource[:plugin][depName]
