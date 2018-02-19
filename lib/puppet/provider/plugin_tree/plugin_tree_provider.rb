@@ -12,7 +12,7 @@ require 'net/http'
 require_relative 'plugin_tree_version.rb'
 #gem list; /opt/puppetlabs/puppet/bin/gem install rubyzip
 
-$LOAD_PATH.unshift '/home/ze78rm/modules/plugin_tree/files'
+$LOAD_PATH.unshift '/etc/puppetlabs/code/environments/production/modules/plugin_tree/files'
 #$LOAD_PATH.unshift '/tmp/files'
 require 'zip'
 
