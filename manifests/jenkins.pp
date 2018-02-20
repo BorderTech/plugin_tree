@@ -1,8 +1,8 @@
 class plugin_tree::jenkins {
   package { 'jenkins':
-    ensure   => "installed",
-    provider => "rpm",
-    source   => "/etc/puppetlabs/code/environments/production/modules/plugin_tree/files/jenkins-2.7-1.1.noarch.rpm",
+    ensure   => 'installed',
+    provider => 'rpm',
+    source   => '/etc/puppetlabs/code/environments/production/modules/plugin_tree/files/jenkins-2.7-1.1.noarch.rpm',
   }
 
   group { 'jenkins':
@@ -27,4 +27,4 @@ class plugin_tree::jenkins {
     mode    => '0750',
     before  => Package['jenkins'],
   }
-} 
+}

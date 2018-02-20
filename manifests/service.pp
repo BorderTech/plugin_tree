@@ -1,9 +1,9 @@
 class plugin_tree::service {
-  service { "jenkins":
+  service { 'jenkins':
+    ensure     => 'running',
     enable     => true,
-    ensure     => "running",
     hasrestart => true,
-    require    => Package["jenkins"],
+    require    => Package['jenkins'],
   }
 }
 
