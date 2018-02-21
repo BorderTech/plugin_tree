@@ -1,7 +1,7 @@
 class plugin_tree::jenkins_plugins {
 
-  plugin_tree { 'test':
-    name        => 'installing_jenkins_plugin',
+  plugin_tree { 'install_jenkins_plugins':
+    name        => 'install_jenkins_plugins',
     plugin      => {
       # 'blueocean' => '1.4.0',
       # 'ant'       => '1.4',
@@ -20,6 +20,6 @@ class plugin_tree::jenkins_plugins {
     owner  => 'jenkins',
     group  => 'jenkins',
     mode   => '0750',
-    before => Plugin_tree['test'],
+    before => Plugin_tree['install_jenkins_plugins'],
   }
 }

@@ -1,15 +1,15 @@
 {
-  "name": "dusan-plugin_tree",
+  "name": "plugin-tree",
   "version": "0.1.0",
-  "author": "dusan",
-  "summary": null,
+  "author": "dusan.munizaba@homeaffairs.gov.au",
+  "summary": "",
   "license": "Apache-2.0",
   "source": "",
-  "project_page": null,
-  "issues_url": null,
+  "project_page": "",
+  "issues_url": "",
   "dependencies": [
     {"name":"puppetlabs-stdlib","version_requirement":">= 1.0.0"}
   ],
-  "data_provider": null
+  "data_provider": ""
 }
 
