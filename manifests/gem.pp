@@ -1,7 +1,7 @@
-class plugin_tree::gem {
+class jenkins::gem {
   package { 'rubyzip':
-    ensure   => installed,
     provider => 'puppet_gem',
+    ensure   => installed,
   }
 }
 

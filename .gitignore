@@ -1,6 +1,10 @@
 .idea/
 **/reports/
 
-*.rpm
+**.log
+**.rpm
+**.lock
+**.zip
+**tar.gz
 
-*.lock
+**.DS_STORE

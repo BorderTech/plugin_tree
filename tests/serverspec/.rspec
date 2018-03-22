@@ -1,3 +1,4 @@
 --color
---format documentation
---format html  --out=reports/html/jenkins_rspec.html
+--format progress
+--format html                --out=reports/html/jenkins_unit.html
+--format RspecJunitFormatter --out=reports/xml/jenkins_unit.xml

@@ -1,5 +1,5 @@
 {
-  "name": "plugin-tree",
+  "name": "jenkins",
   "version": "0.1.0",
   "author": "dusan.munizaba@homeaffairs.gov.au",
   "summary": "",
@@ -12,4 +12,3 @@
   ],
   "data_provider": ""
 }
-

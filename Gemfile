@@ -10,6 +10,24 @@ gem 'rspec-puppet'
 gem 'zip', '>= 1.2.0'
 gem 'serverspec'
 gem 'infrataster'
+gem 'rspec_junit_formatter'
+
+# for addtional testing and linting
+# needs to be checked hat is working with Ruby 2.0.0
+# and if we need all of it.
+# gem 'semantic_puppet'
+# gem 'rspec_junit_formatter'
+# gem 'puppet-lint-classes_and_types_beginning_with_digits-check'
+# gem 'puppet-lint-explicit_hiera_class_param_lookup-check'
+# gem 'puppet-lint-security-plugins'
+# # gem 'puppet-lint-indent-check' # caused error with puppet-lint
+# gem 'puppet-lint-absolute_classname-check'
+# gem 'puppet-lint-leading_zero-check'
+# gem 'puppet-lint-unquoted_string-check'
+# gem 'puppet-lint-variable_contains_upcase'
+# gem 'puppet-lint-numericvariable'
+# gem 'puppet-lint-param-docs'
+# # gem 'puppet-retrospec'
 
 # rspec must be v2 for ruby 1.8.7
 if RUBY_VERSION >= '1.8.7' && RUBY_VERSION < '1.9'
