@@ -1,8 +1,8 @@
-class plugin_tree::jenkins {
+class jenkins::jenkins {
   package { 'jenkins':
-    ensure   => 'installed',
-    provider => 'rpm',
-    source   => '/etc/puppetlabs/code/environments/production/modules/plugin_tree/files/jenkins-2.7-1.1.noarch.rpm',
+    ensure   => "installed",
+    provider => "rpm",
+    source   => "/etc/puppetlabs/code/environments/production/modules/jenkins/files/jenkins-2.7-1.1.noarch.rpm",
   }
 
   group { 'jenkins':
@@ -14,12 +14,12 @@ class plugin_tree::jenkins {
     comment => 'Jenkins Continuous Integration Server',
     groups  => ['jenkins'],
     home    => '/var/lib/jenkins',
-    shell   => '/bin/false'
+    shell   => '/bin/bash'
   }
 
   file { '/tmp':
     ensure  => 'directory',
-    source  => '/etc/puppetlabs/code/environments/production/modules/plugin_tree/files',
+    source  => '/etc/puppetlabs/code/environments/production/modules/jenkins/files',
     recurse => 'remote',
     path    => '/tmp',
     owner   => 'jenkins',
@@ -27,4 +27,4 @@ class plugin_tree::jenkins {
     mode    => '0750',
     before  => Package['jenkins'],
   }
-}
+} 

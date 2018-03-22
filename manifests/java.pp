@@ -1,6 +1,5 @@
-class plugin_tree::java {
+class jenkins::java {
   package { 'java':
     ensure => present,
   }
 }
-
